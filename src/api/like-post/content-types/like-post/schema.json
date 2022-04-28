@@ -1,0 +1,28 @@
+{
+  "kind": "collectionType",
+  "collectionName": "like_posts",
+  "info": {
+    "singularName": "like-post",
+    "pluralName": "like-posts",
+    "displayName": "like_post",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "post": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::post.post",
+      "inversedBy": "like_posts"
+    },
+    "users_permissions_user": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "like_posts"
+    }
+  }
+}
